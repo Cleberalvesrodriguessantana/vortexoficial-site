@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORTEX - COMMUNICATION. AMPLIFIED.</title>
+    <style>
+        /* Estilos Globais e Reset */
+        body {
+            background-color: #000000;
+            color: #E0FFFF;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden; /* Oculta a barra de rolagem para o efeito do vórtice */
+        }
+
+        /* Efeito de Vórtice Sutil no Fundo */
+        .vortex-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Gradiente radial para simular o vórtice */
+            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.1) 0%, rgba(0, 0, 0, 1) 70%);
+            animation: vortex-spin 40s linear infinite;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        @keyframes vortex-spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Container Principal do Conteúdo */
+        .content-container {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        /* Título Principal VORTEX */
+        h1 {
+            font-size: 6em;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #00FFFF; /* Azul Neon */
+            /* Efeito de brilho neon */
+            text-shadow: 0 0 25px #00FFFF, 0 0 5px #00FFFF;
+            margin-bottom: 5px;
+            letter-spacing: 10px;
+        }
+
+        /* Subtítulo */
+        h2 {
+            font-size: 1.5em;
+            color: #FF00FF; /* Roxo Magenta */
+            margin-bottom: 40px;
+        }
+
+        /* Mensagem de Segurança */
+        .security-message {
+            font-size: 1.2em;
+            color: #00FFFF;
+            border: 1px solid #00FFFF;
+            padding: 10px 20px;
+            margin-bottom: 50px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Botão Principal (CTA) */
+        .cta-button {
+            background-color: #00FFFF;
+            color: black;
+            padding: 15px 40px;
+            border: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 0 20px #00FFFF;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: #E0FFFF;
+            box-shadow: 0 0 30px #E0FFFF;
+        }
+
+        /* Link Secundário */
+        .secondary-link {
+            margin-top: 20px;
+            display: block;
+            color: #FF00FF;
+            font-size: 0.9em;
+            text-decoration: none;
+            border-bottom: 1px dashed #FF00FF;
+        }
+
+        /* Simulação do Gráfico de Segurança (Olho Holográfico) */
+        .security-graphic {
+            width: 80px;
+            height: 80px;
+            margin: 20px auto 0;
+            border: 2px solid #00FFFF;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #00FFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #00FFFF;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            to {
+                box-shadow: 0 0 30px #00FFFF, 0 0 5px #FF00FF;
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="vortex-bg"></div>
+    <div class="content-container">
+        <div class="security-graphic">
+            <span style="transform: rotate(-45deg);">👁️</span> 
+        </div>
+        <h1>VORTEX</h1>
+        <h2>COMMUNICATION. AMPLIFIED.</h2>
+        
+        <div class="security-message">
+            ACESSO RESTRITO. O Futuro da Conexão Exige Prova Biométrica.
+        </div>
+        
+        <a href="#" class="cta-button">
+            [ ENTRAR ] (APENAS COM CONVITE)
+        </a>
+
+        <a href="#" class="secondary-link">
+            Visão Global do Projeto VORTEX e Pilares de Compliance.
+        </a>
+    </div>
+</body>
+</html>
