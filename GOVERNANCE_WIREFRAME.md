@@ -38,8 +38,23 @@ Este documento detalha as especificações funcionais e visuais do Painel de Con
 
 ---
 
-## 4. PRÓXIMO MÓDULO CRÍTICO DE GOVERNANÇA
+---
 
-**AUDITORIA DE LOGS IMUTÁVEIS:**
+## 4. MÓDULO: AUDITORIA DE LOGS IMUTÁVEIS
 
-Deve ser a próxima tela a ser detalhada, focando na consulta de logs de sistema (ações de usuários e ações de moderação), garantindo que todas as decisões sejam rastreáveis e inalteráveis (Tecnologia Kafka/Blockchain-like).
+**Propósito:** Fornecer à Polícia VORTEX uma visão inalterável de todas as ações no sistema, garantindo a transparência e rastreabilidade da moderação.
+
+| Elemento | Propósito e Especificação Técnica | UI/UX (Design de Terminal de Dados) |
+| :--- | :--- | :--- |
+| **Título** | VORTEX GOVERNANCE PANEL / MÓDULO: LOG AUDIT | Fonte monoespaçada, Ciano, enfatizando a natureza técnica e crítica. |
+| **Filtros de Busca** | Filtros essenciais para rastreabilidade: `TIMESTAMP RANGE` (UTC), `USER_ID`, `EVENT_TYPE` (e.g., `COMMUNICATION_INFRACTION`, `ADMIN_ACTION`, `BIOMETRIC_FAIL`). | Campos de entrada simples com ícones de lupa e relógio. |
+| **Visão Principal** | Tabela de logs em tempo real (ou próximo a ele), simulando uma saída de *stream* de dados de alta velocidade (Kafka). | Logs exibidos em formato de terminal (texto verde/ciano sobre fundo preto). |
+| **Formato do Log** | O formato deve ser rigoroso para provar imutabilidade. | Exemplo: `[2025-10-20T17:35:01Z] [USER: 9XF3T8D] [EVENT: MSG_SEND_FAIL] [HASH: 7C4D...90A]` |
+| **Detalhe do Hash** | **Prova de Integridade (Blockchain-like):** Cada evento tem um *hash* de segurança (SHA-256) que prova que o log não foi adulterado. | O *hash* é exibido e é clicável para simular a verificação da cadeia de logs. |
+| **Alerta de Anomalia** | Destacar ações críticas (e.g., tentativa de acesso não autorizado, reversão de punição por um Admin, falha de integridade de dado). | Logs com anomalias piscam em **Vermelho Intenso** e **Roxo Magenta**. |
+
+---
+
+## CONCLUSÃO DO WIREFRAME VORTEX
+
+Com este módulo, o VORTEX tem a arquitetura de acesso, comunidade e governança 100% especificada no padrão de grandeza e seriedade exigido. O projeto está pronto para a fase de desenvolvimento e implementação dos códigos finais.
