@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORTEX - MAIN STREAM - ACCESS GRANTED</title>
+    <style>
+        /* Estilos de Fundo e Frame Consistentes */
+        body {
+            background-color: #03030A;
+            color: #E0FFFF;
+            font-family: 'Consolas', 'Menlo', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, rgba(3, 3, 10, 1) 70%);
+        }
+
+        .app-frame {
+            background: rgba(10, 10, 20, 0.7);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.2);
+            width: 375px;
+            max-width: 90%;
+            height: 667px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            backdrop-filter: blur(10px);
+            overflow: hidden; /* Garante que o conteúdo do feed seja o único a rolar */
+        }
+
+        /* HEADER E STATUS */
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .verified-status {
+            font-size: 0.9em;
+            color: #00FF00; /* Verde para Acesso Garantido */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .verified-icon {
+            font-size: 1.2em;
+            margin-right: 5px;
+            text-shadow: 0 0 5px #00FF00;
+        }
+
+        .vortex-logo-small {
+            max-width: 50px;
+            filter: drop_shadow(0 0 5px rgba(255, 0, 255, 0.6));
+        }
+
+        /* FEED (O Stream) */
+        .feed-container {
+            flex-grow: 1;
+            overflow-y: scroll; /* Permite rolar o conteúdo do Feed */
+            padding: 20px;
+        }
+        
+        /* CARD DE CONTEÚDO (Simulação de um post) */
+        .content-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #FF00FF; /* Linha de seriedade */
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.8em;
+        }
+        
+        .user-id {
+            color: #00FFFF;
+            font-weight: bold;
+        }
+        
+        .encryption-status {
+            color: #00FF00;
+        }
+
+        /* BOTÃO PRINCIPAL: ENTRAR NO MUNDO 3D */
+        .cta-hub {
+            position: absolute;
+            bottom: 60px; /* Acima da barra de navegação */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #FF00FF, #00FFFF);
+            color: #000000;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 0 0 10px rgba(255, 0, 255, 0.6);
+            animation: pulse-cta 1.5s infinite alternate;
+            text-decoration: none;
+            z-index: 20;
+        }
+
+        @keyframes pulse-cta {
+            from { transform: scale(1) translateX(-50%); opacity: 0.9; }
+            to { transform: scale(1.05) translateX(-50%); opacity: 1; }
+        }
+
+        /* BARRA DE NAVEGAÇÃO INFERIOR */
+        .nav-bar {
+            width: 100%;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 1px solid rgba(255, 0, 255, 0.3);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            z-index: 10;
+        }
+
+        .nav-item {
+            color: #888888;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: #00FFFF;
+        }
+
+        /* Ícone de Mensagens com Criptografia */
+        .message-icon::after {
+            content: '🔒';
+            font-size: 0.5em;
+            position: absolute;
+            top: 5px;
+            right: 0;
+            color: #00FF00;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-frame">
+        <div class="header">
+            <div class="verified-status">
+                <span class="verified-icon">✅</span> VORTEX ACCESS GRANTED
+            </div>
+            <img src="./assets/logo.jpg" alt="VORTEX Logo" class="vortex-logo-small">
+        </div>
+
+        <div class="feed-container">
+            <div class="content-card">
+                <div class="card-header">
+                    <span class="user-id">USER-ID: 9XF3T8D</span>
+                    <span class="encryption-status">END-TO-END ENCRYPTED</span>
+                </div>
+                <p>Protocolo de comunicação estabelecido. A verificação biométrica garante a integridade dos dados e a responsabilidade da identidade digital.</p>
+            </div>
+
+            <div class="content-card">
+                <div class="card-header">
+                    <span class="user-id">USER-ID: B2A4C9J</span>
+                    <span class="encryption-status">END-TO-END ENCRYPTED</span>
+                </div>
+                <p>Nova arquitetura de governança implementada. O rastreamento de logs imutáveis eleva o nível de seriedade da comunidade.</p>
+            </div>
+            
+            <div class="content-card">
+                <div class="card-header">
+                    <span class="user-id">VORTEX ADMINS</span>
+                    <span class="encryption-status">SYSTEM BROADCAST</span>
+                </div>
+                <p style="color:#FF00FF;">ATENÇÃO: Relembramos que o Protocolo Disciplinar Nível 2 (Restrição 48 horas) está ativo para violações de conduta.</p>
+            </div>
+            
+            </div>
+
+        <a href="#" class="cta-hub">
+            [ ENTRAR NO HUB 3D ]
+        </a>
+
+        <div class="nav-bar">
+            <span class="nav-item active">🏠</span> <span class="nav-item message-icon">💬</span> <span class="nav-item">🔍</span> <span class="nav-item">👤</span> </div>
+    </div>
+</body>
+</html>
