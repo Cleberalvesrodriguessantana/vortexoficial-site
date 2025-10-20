@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VORTEX - COMMUNICATION. AMPLIFIED.</title>
+    <title>VORTEX - ACCESS PROTOCOL: INVITE CODE</title>
     <style>
-        /* Estilos Globais e Reset */
+        /* ESTILO GLOBAL: Foco em Modo Escuro, Transparência e Fontes Técnicas */
         body {
-            background-color: #000000;
-            color: #E0FFFF;
-            font-family: 'Arial', sans-serif;
+            background-color: #03030A; /* Preto quase absoluto */
+            color: #E0FFFF; /* Ciano claro */
+            font-family: 'Consolas', 'Menlo', monospace; /* Fonte técnica */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -17,144 +17,165 @@
             height: 100vh;
             margin: 0;
             text-align: center;
-            overflow: hidden; /* Oculta a barra de rolagem para o efeito do vórtice */
+            overflow: hidden;
+            /* Fundo Imersivo: Grade de dados */
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px; /* Tamanho da grade */
+            background-position: center center;
+            /* Um leve gradiente ou imagem de fundo para dar profundidade como na imagem de referência */
+            background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, rgba(3, 3, 10, 1) 70%), url('https://via.placeholder.com/1600x900/011f3c/00FFFF?text=DATA+NETWORK+BACKGROUND') center center/cover no-repeat;
         }
 
-        /* Efeito de Vórtice Sutil no Fundo */
-        .vortex-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Gradiente radial para simular o vórtice */
-            background: radial-gradient(circle at center, rgba(255, 0, 255, 0.1) 0%, rgba(0, 0, 0, 1) 70%);
-            animation: vortex-spin 40s linear infinite;
-            opacity: 0.5;
-            z-index: 0;
-        }
-
-        @keyframes vortex-spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Container Principal do Conteúdo */
-        .content-container {
+        /* FRAME DO APP/PORTAL */
+        .app-frame {
+            background: rgba(10, 10, 20, 0.7); /* Fundo translúcido como na imagem */
+            border: 1px solid rgba(0, 255, 255, 0.3); /* Borda sutil neon */
+            border-radius: 20px; /* Cantos arredondados */
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.2), 0 0 100px rgba(255, 0, 255, 0.1);
+            width: 375px; /* Largura padrão de celular para web */
+            max-width: 90%; /* Responsividade */
+            height: 667px; /* Altura padrão de celular */
+            max-height: 90vh; /* Responsividade */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
             position: relative;
-            z-index: 10;
-            padding: 20px;
+            backdrop-filter: blur(10px); /* Efeito de vidro fosco */
         }
 
-        /* Título Principal VORTEX */
-        h1 {
-            font-size: 6em;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: #00FFFF; /* Azul Neon */
-            /* Efeito de brilho neon */
-            text-shadow: 0 0 25px #00FFFF, 0 0 5px #00FFFF;
+        /* SIMULAÇÃO DA BARRA DE STATUS DO CELULAR */
+        .status-bar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* LOGO VORTEX - AGORA USANDO A IMAGEM OFICIAL */
+        .vortex-logo-img {
+            max-width: 150px; /* Tamanho ajustado para tela de app */
+            height: auto;
+            margin-bottom: 10px;
+            filter: drop_shadow(0 0 10px rgba(0, 255, 255, 0.8)) drop-shadow(0 0 5px rgba(255, 0, 255, 0.6));
+            animation: logo-glow 2s infinite alternate; /* Efeito de brilho sutil */
+        }
+
+        @keyframes logo-glow {
+            from { opacity: 0.8; }
+            to { opacity: 1; }
+        }
+
+        .vortex-title {
+            font-size: 1.8em;
+            color: #E0FFFF;
             margin-bottom: 5px;
-            letter-spacing: 10px;
+            letter-spacing: 3px;
         }
 
-        /* Subtítulo */
-        h2 {
-            font-size: 1.5em;
-            color: #FF00FF; /* Roxo Magenta */
+        .vortex-domain {
+            font-size: 0.8em;
+            color: #AAAAAA;
             margin-bottom: 40px;
         }
 
-        /* Mensagem de Segurança */
-        .security-message {
-            font-size: 1.2em;
-            color: #00FFFF;
-            border: 1px solid #00FFFF;
-            padding: 10px 20px;
-            margin-bottom: 50px;
-            display: inline-block;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        /* CAMPO DE ENTRADA */
+        .input-code {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.5); /* Borda neon no campo */
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5); /* Fundo escuro translúcido */
+            color: #00FFFF; /* Texto neon */
+            font-size: 1.1em;
+            text-align: center;
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .input-code:focus {
+            outline: none;
+            border-color: #FF00FF;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+        }
+        .input-code::placeholder {
+            color: rgba(0, 255, 255, 0.6);
         }
 
-        /* Botão Principal (CTA) */
-        .cta-button {
-            background-color: #00FFFF;
-            color: black;
-            padding: 15px 40px;
+        /* BOTÃO JOIN VORTEX */
+        .btn-join {
+            width: 100%;
+            padding: 15px;
             border: none;
-            font-weight: bold;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #00FFFF, #FF00FF); /* Gradiente neon */
+            color: #000000;
             font-size: 1.2em;
+            font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 0 20px #00FFFF;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
             transition: all 0.3s ease-in-out;
-            text-decoration: none;
-            display: inline-block;
-            text-transform: uppercase;
+            text-decoration: none; /* Para usar como link */
+            display: inline-block; /* Para usar como link */
+        }
+        .btn-join:hover {
+            box-shadow: 0 0 30px #FF00FF, 0 0 10px #00FFFF;
+            transform: translateY(-2px);
         }
 
-        .cta-button:hover {
-            background-color: #E0FFFF;
-            box-shadow: 0 0 30px #E0FFFF;
-        }
-
-        /* Link Secundário */
-        .secondary-link {
-            margin-top: 20px;
-            display: block;
-            color: #FF00FF;
-            font-size: 0.9em;
-            text-decoration: none;
-            border-bottom: 1px dashed #FF00FF;
-        }
-
-        /* Simulação do Gráfico de Segurança (Olho Holográfico) */
-        .security-graphic {
-            width: 80px;
-            height: 80px;
-            margin: 20px auto 0;
-            border: 2px solid #00FFFF;
-            border-radius: 50%;
-            box-shadow: 0 0 15px #00FFFF;
+        /* OPÇÕES DE REGISTRO SOCIAL */
+        .social-options {
+            margin-top: auto; /* Empurra para o final do frame */
+            font-size: 0.8em;
+            color: #AAAAAA;
+            padding-top: 20px;
+            width: 100%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 2em;
-            color: #00FFFF;
-            animation: pulse 2s infinite alternate;
+            align-items: center;
+            gap: 15px;
         }
-
-        @keyframes pulse {
-            to {
-                box-shadow: 0 0 30px #00FFFF, 0 0 5px #FF00FF;
-                transform: scale(1.05);
-            }
+        .social-options a {
+            color: #00FFFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Ícones sociais (poderiam ser SVGs ou FontAwesome) */
+        .social-icon {
+            font-size: 1.5em; /* Apenas para simular ícones */
+            color: #FF00FF;
         }
     </style>
 </head>
 <body>
-    <div class="vortex-bg"></div>
-    <div class="content-container">
-        <div class="security-graphic">
-            <span style="transform: rotate(-45deg);">👁️</span> 
+    <div class="app-frame">
+        <div class="status-bar">
+            <span>10:09 AM</span>
+            <span>📱 Wi-Fi 📶</span>
         </div>
-        <h1>VORTEX</h1>
-        <h2>COMMUNICATION. AMPLIFIED.</h2>
-        
-        <div class="security-message">
-            ACESSO RESTRITO. O Futuro da Conexão Exige Prova Biométrica.
-        </div>
-        
-        <a href="#" class="cta-button">
-            [ ENTRAR ] (APENAS COM CONVITE)
-        </a>
 
-        <a href="#" class="secondary-link">
-            Visão Global do Projeto VORTEX e Pilares de Compliance.
-        </a>
+        <img src="./assets/logo.jpg" alt="VORTEX Official Logo" class="vortex-logo-img">
+        
+        <p class="vortex-title">VORTEX</p>
+        <p class="vortex-domain">vortexoficial.com</p>
+
+        <input type="password" class="input-code" placeholder="ENTER YOUR INVITE CODE">
+        
+        <a href="./facial-verification.html" class="btn-join">JOIN VORTEX</a>
+        
+        <div class="social-options">
+            QR or Register with: 
+            <a href="#">Facebook</a> 
+            <span class="social-icon">🍎</span> 
+            <span class="social-icon">ⓕ</span>
+        </div>
     </div>
 </body>
 </html>
