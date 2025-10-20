@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORTEX - PROTOCOL O-01: FACE-ENROLLMENT</title>
+    <style>
+        /* Reutiliza o estilo de fundo e cores para consistência com o index.html */
+        body {
+            background-color: #03030A;
+            color: #E0FFFF;
+            font-family: 'Consolas', 'Menlo', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, rgba(3, 3, 10, 1) 70%), url('https://via.placeholder.com/1600x900/011f3c/00FFFF?text=DATA+NETWORK+BACKGROUND') center center/cover no-repeat;
+        }
+
+        .app-frame {
+            background: rgba(10, 10, 20, 0.7);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.2), 0 0 100px rgba(255, 0, 255, 0.1);
+            width: 375px;
+            max-width: 90%;
+            height: 667px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .status-bar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* LOGO OFICIAL VORTEX */
+        .vortex-logo-img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 5px;
+            filter: drop_shadow(0 0 10px rgba(0, 255, 255, 0.8)) drop-shadow(0 0 5px rgba(255, 0, 255, 0.6));
+        }
+
+        .vortex-title {
+            font-size: 1.2em;
+            color: #E0FFFF;
+            margin-bottom: 30px;
+        }
+
+        /* ÁREA DA CÂMERA/SCANNER BIOMÉTRICO (O Coração da Segurança) */
+        .scanner-area {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin-bottom: 40px;
+            border-radius: 50%;
+            border: 3px solid #00FFFF; /* Círculo Ciano Neon */
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.8), inset 0 0 10px rgba(0, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Simulação do Rosto no Centro - Substituirá pelo Feed da Câmera Real */
+            background-color: rgba(255, 255, 255, 0.1);
+            animation: scanner-pulse 1.5s infinite alternate;
+        }
+
+        @keyframes scanner-pulse {
+            from {
+                border-color: #00FFFF;
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            }
+            to {
+                border-color: #FF00FF;
+                box-shadow: 0 0 25px rgba(255, 0, 255, 0.7);
+            }
+        }
+
+        .scanner-text {
+            color: #00FFFF;
+            font-size: 0.9em;
+            position: absolute;
+            bottom: -25px;
+            text-shadow: 0 0 5px #00FFFF;
+        }
+
+        /* TÍTULO TÉCNICO E INSTRUÇÕES */
+        .protocol-title {
+            font-size: 1.5em;
+            color: #FF00FF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .instruction-text {
+            font-size: 1em;
+            color: #E0FFFF;
+            margin-bottom: 40px;
+            max-width: 80%;
+        }
+
+        /* BOTÃO E STATUS DE PROCESSAMENTO */
+        .btn-start {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #FF00FF, #00FFFF);
+            color: #000000;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-start:hover {
+            box-shadow: 0 0 30px #00FFFF, 0 0 10px #FF00FF;
+            transform: translateY(-2px);
+        }
+
+        .compliance-note {
+            margin-top: 15px;
+            font-size: 0.75em;
+            color: #AAAAAA;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-frame">
+        <div class="status-bar">
+            <span>10:10 AM</span>
+            <span>📱 Wi-Fi 📶</span>
+        </div>
+
+        <img src="./assets/logo.jpg" alt="VORTEX Official Logo" class="vortex-logo-img">
+        <p class="vortex-title">VORTEX OFICIAL</p>
+        
+        <p class="protocol-title">PROTOCOL O-01: FACE-ENROLLMENT</p>
+        
+        <div class="scanner-area">
+            <span class="scanner-text">LIVENESS CHECK ACTIVE</span>
+            </div>
+
+        <p class="instruction-text">
+            MANTENHA O ROSTO CENTRALIZADO NO QUADRO. O LIVENESS CHECK (PROVA DE VIDA) ESTÁ ATIVO. OLHE DIRETAMENTE PARA A CÂMERA.
+        </p>
+        
+        <a href="./main-feed.html" class="btn-start">
+            START BIOMETRIC EXTRACTION
+        </a>
+        
+        <p class="compliance-note">
+            AVISO DE COMPLIANCE: Seu Descritor Biométrico será cifrado e armazenado fora do DB principal (Conforme Compliance Legal).
+        </p>
+    </div>
+</body>
+</html>
